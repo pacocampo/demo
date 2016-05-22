@@ -41,13 +41,33 @@ class RoundImage : UIImageView {
   }
 }
 
+class rappiAppSelectedButton : UIButton {
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    backgroundColor = UIColor.whiteColor()
+    tintColor = UIColor(red: 253/255, green: 125/255, blue: 91/255, alpha: 1.0)
+    setTitle("Ver en iTunes", forState: .Normal)
+    layer.borderColor = UIColor(red: 253/255, green: 125/255, blue: 91/255, alpha: 1.0).CGColor
+    layer.borderWidth = 1
+    layer.cornerRadius = 2
+    layer.shadowColor = UIColor.grayColor().CGColor
+    layer.shadowOffset = CGSize(width: 3, height: 3)
+    layer.shadowOpacity = 2
+  }
+}
+
 
 // TopBar
+@objc protocol TopBarDelegate {
+  optional func topbar(topbar:TopBar, clicked:String)
+}
+
 class TopBar : UIView {
   let thisFrame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height * 0.10)
   
-  var titleLabel : UILabel!
-  var menuButton : UIButton!
+  var titleLabel  : UILabel!
+  var menuButton  : UIButton!
+  var delegate    : TopBarDelegate!
   
   var title : String {
     set { titleLabel.text = newValue }
@@ -77,6 +97,13 @@ class TopBar : UIView {
     
     self.addSubview(titleLabel)
     self.addSubview(menuButton)
+    
+    func clickBack(sender:AnyObject) {
+      if(delegate != nil) {
+        delegate.topbar!(self, clicked: "menu");
+      }
+    }
+
     
   }
   

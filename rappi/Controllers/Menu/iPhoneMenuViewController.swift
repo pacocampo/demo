@@ -9,6 +9,10 @@
 import UIKit
 
 class iPhoneMenuViewController: UIViewController {
+  
+  //Attributes
+  let categories = Menu.categorias
+  
   //Outlets
   @IBOutlet weak var tableview: UITableView!
   
@@ -17,20 +21,18 @@ class iPhoneMenuViewController: UIViewController {
     
   }
 
-  //Attributes
-  let categories = Menu.categorias
-
   //Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     let bar = TopBar()
-    bar.hiddenMenu = false
+    bar.hiddenMenu = true
     bar.title = "Categorias"
     self.view.addSubview(bar)
   }
   
 }
 
+//MARK : Table View Delegate & DataSource
 extension iPhoneMenuViewController : UITableViewDelegate, UITableViewDataSource {
 
   //MARK: Table stuff
