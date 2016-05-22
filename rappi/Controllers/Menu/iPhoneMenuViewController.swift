@@ -28,6 +28,7 @@ class iPhoneMenuViewController: UIViewController, TopBarDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     topbarView.hiddenMenu  = true
+    topbarView.hiddenBack  = true
     topbarView.title       = "Categorias"
     topbarView.delegate    = self
     self.view.addSubview(topbarView)

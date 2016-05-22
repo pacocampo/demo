@@ -11,11 +11,18 @@ import Realm
 import RealmSwift
 
 class AppsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, TopBarDelegate {
+  
+  //MARK: Properties
+  var category = "Games"
+  let reuseIdentifier = "Cell"
+  let realm = try! Realm()
+  var items  = 0
+  
   //MARK: Outlets
   @IBOutlet weak var collectionView: UICollectionView!
   
   //MARK: Actions
-
+  
   @IBAction func returnFromDetailSegueActions(sender: UIStoryboardSegue){
     
   }
@@ -26,15 +33,9 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
       self.backToMenu()
     }
   }
-
+  //==============================================================//
   
-  //MARK: Properties
-  var category = "Games"
-  let reuseIdentifier = "Cell"
-  let realm = try! Realm()
-  var items  = 0
-  
-
+  //MARK: Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     buildAppsViews()
@@ -42,8 +43,9 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     //TopBar
     let topBar = TopBar()
     topBar.hiddenMenu = false
+    topBar.hiddenBack = true
     topBar.title      = category
-    topBar.delegate    = self
+    topBar.delegate   = self
     self.view.addSubview(topBar)
     
     //Add gesture for back navigation
@@ -73,7 +75,7 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! AppsCollectionViewCell
     let userPredicate   = NSPredicate(format: "category = %@", category)
     let apps = realm.objects(Application).filter(userPredicate)
-
+    
     let item = apps[indexPath.item]
     print(item.name)
     cell.layer.borderColor = UIColor.whiteColor().CGColor
@@ -81,7 +83,7 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     cell.itemImage.image = UIImage(data: item.image!)
     cell.itemLabel.text = item.name
     
-
+    
     return cell
   }
   
@@ -103,14 +105,14 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     if let id = identifier{
       if id == "returnCategoriesSegue" {
         let unwindSegue = ReturnCategoriesSegue(identifier: id,
-                                                  source: fromViewController,
-                                                  destination: toViewController,
-                                                  performHandler: { () -> Void in
-                                                    
+                                                source: fromViewController,
+                                                destination: toViewController,
+                                                performHandler: { () -> Void in
+                                                  
         })
         
         return unwindSegue
-      }        
+      }
     }
     return super.segueForUnwindingToViewController(toViewController, fromViewController: fromViewController, identifier: identifier)
   }

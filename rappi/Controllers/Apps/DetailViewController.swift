@@ -9,9 +9,10 @@
 import UIKit
 import RealmSwift
 
-class DetailViewController: UIViewController {
-
+class DetailViewController: UIViewController, TopBarDelegate {
+  
   //MARK: Attributes
+  let topbar = TopBar()
   var apps : String?
   let realm = try! Realm()
   var itunesId = ""
@@ -31,10 +32,21 @@ class DetailViewController: UIViewController {
     UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/bars/id\(itunesId)")!)
   }
   
-
+  func topbar(topbar: TopBar, clicked: String) {
+    self.backToCategories()
+  }
+  
+  //MARK: Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     getApp()
+    
+    //topbar
+    topbar.title      = appName.text!
+    topbar.hiddenMenu = true
+    topbar.hiddenBack = false
+    topbar.delegate   = self
+    self.view.addSubview(topbar)
     
     //Add gesture
     let gestureToBack = UISwipeGestureRecognizer(target: self, action: #selector(DetailViewController.backToCategories))
@@ -80,5 +92,5 @@ class DetailViewController: UIViewController {
   func backToCategories() {
     self.performSegueWithIdentifier("returnCategoriesSegue", sender: self)
   }
-
+  
 }

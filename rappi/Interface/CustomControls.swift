@@ -67,6 +67,7 @@ class TopBar : UIView {
   
   var titleLabel  : UILabel!
   var menuButton  : UIButton!
+  var backButton  : UIButton!
   var delegate    : TopBarDelegate!
   
   var title : String {
@@ -77,6 +78,11 @@ class TopBar : UIView {
   var hiddenMenu : Bool {
     set { menuButton.hidden = newValue }
     get { return !menuButton.hidden }
+  }
+  
+  var hiddenBack : Bool {
+    set { backButton.hidden = newValue }
+    get { return !backButton.hidden }
   }
   
   init() {
@@ -96,7 +102,13 @@ class TopBar : UIView {
     menuButton.setImage(UIImage(named:"menuIcon"), forState: .Normal)
     menuButton.addTarget(self, action: #selector(TopBar.clickBack(_:)), forControlEvents: .TouchUpInside)
     
+    // BackButton
+    backButton = UIButton(frame: CGRectMake(5, 5, 50, 30))
+    backButton.setTitle("back", forState: .Normal)
+    backButton.addTarget(self, action: #selector(TopBar.clickBack(_:)), forControlEvents: .TouchUpInside)
+    
     self.addSubview(titleLabel)
+    self.addSubview(backButton)
     self.addSubview(menuButton)
     
   }
