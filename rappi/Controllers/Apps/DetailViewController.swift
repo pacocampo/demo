@@ -10,9 +10,11 @@ import UIKit
 import RealmSwift
 
 class DetailViewController: UIViewController {
-  
+
+  //MARK: Attributes
   var apps : String?
   let realm = try! Realm()
+  var itunesId = ""
   var scrollHeight : CGFloat = 0
   var scrollWidth :CGFloat = 0
   
@@ -23,6 +25,12 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var appPrice: UILabel!
   @IBOutlet weak var appDescription: UITextView!
   @IBOutlet weak var appRecommendedView: UIScrollView!
+  
+  //MARK: Actions
+  @IBAction func itunesAction(sender: AnyObject) {
+    UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/bars/id\(itunesId)")!)
+  }
+  
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,6 +48,7 @@ class DetailViewController: UIViewController {
     
   }
   
+  //MARK : Get Detail Application
   private func getApp() {
     var xView : CGFloat = 5.0
     if let app = apps {
@@ -50,6 +59,9 @@ class DetailViewController: UIViewController {
       appCategory.text    = application!.category
       appPrice.text       = String(application!.price)
       appDescription.text = application!.sumary
+      itunesId            = application!.itunes
+      
+      print(itunesId)
       
       //Built recommended section
       let recommended     = realm.objects(Application).filter("category = '\(application!.category)'")

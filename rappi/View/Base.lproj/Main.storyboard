@@ -372,6 +372,9 @@
                                     <constraint firstAttribute="width" constant="145" id="g10-MC-mIt"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="itunesAction:" destination="PDz-eK-DUK" eventType="touchUpInside" id="o2d-ff-Jfw"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Te podría interesar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THn-v2-dhj">
                                 <rect key="frame" x="20" y="449" width="560" height="18"/>
