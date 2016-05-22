@@ -10,7 +10,7 @@ import UIKit
 
 class iPadMenuViewController: UIViewController {
   @IBOutlet weak var collectionView: UICollectionView!
-    let categories : [String] = ["Games", "Photo & Video", "Social Networking", "Chat", "Entertainment", "Music", "Education", "Travel", "Navigation"]
+    let categories = Menu.categorias
 
   //Action
   @IBAction func returnFromSegueActions(sender: UIStoryboardSegue){
@@ -32,20 +32,23 @@ extension iPadMenuViewController :  UICollectionViewDataSource, UICollectionView
   }
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as UICollectionViewCell
-    let label = UILabel(frame: CGRect(x: 20, y: 5, width: 300, height: 50))
-    label.text = categories[indexPath.row]
-    label.numberOfLines = 3
-    cell.addSubview(label)
+    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! iPadMenuCollectionViewCell
+    
+    let item = categories[indexPath.row]
+    
+    cell.itemImage_IBO.image = UIImage(named: item!["icon"] as! String)
+    cell.itemLabel_IBO.text = item!["title"] as? String
+   
+    
     return cell
   }
     
 
   // MARK: - Navigation
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    let cell    = collectionView.indexPathForCell(sender as! UICollectionViewCell)
-    let vc      = segue.destinationViewController as! AppsViewController
-    vc.category = categories[(cell?.row)!]
+//    let cell    = collectionView.indexPathForCell(sender as! UICollectionViewCell)
+//    let vc      = segue.destinationViewController as! AppsViewController
+//    vc.category = categories[(cell?.row)!]
   }
   
   override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue? {

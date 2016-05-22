@@ -18,12 +18,14 @@ class iPhoneMenuViewController: UIViewController {
   }
 
   //Attributes
-  let categories : [String] = ["Games", "Photo & Video", "Social Networking", "Chat", "Entertainment", "Music", "Education", "Travel", "Navigation"]
+  let categories = Menu.categorias
 
   //Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     let bar = TopBar()
+    bar.hiddenMenu = false
+    bar.title = "Categorias"
     self.view.addSubview(bar)
   }
   
@@ -37,23 +39,22 @@ extension iPhoneMenuViewController : UITableViewDelegate, UITableViewDataSource 
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as UITableViewCell
-    let label = UILabel(frame: CGRect(x: 20, y: 5, width: 300, height: 40))
-    label.text = categories[indexPath.row]
-    cell.addSubview(label)
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as! iPhoneMenuTableViewCell
+    
+    let category = categories[indexPath.row]
+    
+    cell.itemImage_IBO.image = UIImage(named: category!["icon"] as! String)
+    cell.itemLabel_IBO.text = category!["title"] as? String
     
     return cell
   }
   
-  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    return 50
-  }
   
 //  //MARK: Navigation
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    let cell    = tableview.indexPathForSelectedRow!
-    let vc      = segue.destinationViewController as! AppsViewController
-    vc.category = categories[cell.row]
+//    let cell    = tableview.indexPathForSelectedRow!
+//    let vc      = segue.destinationViewController as! AppsViewController
+//    vc.category = categories[cell.row]
   }
   
   override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue? {

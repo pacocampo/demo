@@ -14,5 +14,6 @@ class Application: Object {
   dynamic var image : NSData?
   dynamic var sumary = ""
   dynamic var price = 0.0
+  dynamic var itunes = ""
   
 }

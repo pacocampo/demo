@@ -80,41 +80,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zSr-2d-4gR">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zSr-2d-4gR">
+                                <rect key="frame" x="0.0" y="57" width="600" height="543"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="89" id="Cqb-kq-MZx">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="89"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="90" id="Cqb-kq-MZx" customClass="iPhoneMenuTableViewCell" customModule="rappi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cqb-kq-MZx" id="zKV-bk-EMn">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yK-vO-aXn">
                                                     <rect key="frame" x="8" y="8" width="584" height="73"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Bf-Ku-hOI">
-                                                            <rect key="frame" x="8" y="8" width="57" height="57"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Bf-Ku-hOI" customClass="RoundImage" customModule="rappi" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="0.0" width="73" height="73"/>
+                                                            <color key="backgroundColor" red="0.99215686270000003" green="0.49019607840000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="73" id="C3O-xm-RZ4"/>
+                                                            </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGd-Y3-swl">
-                                                            <rect key="frame" x="73" y="26" width="503" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGd-Y3-swl">
+                                                            <rect key="frame" x="103" y="26" width="473" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="4Bf-Ku-hOI" firstAttribute="leading" secondItem="8yK-vO-aXn" secondAttribute="leadingMargin" id="ERx-Fp-0kX"/>
+                                                        <constraint firstItem="4Bf-Ku-hOI" firstAttribute="top" secondItem="8yK-vO-aXn" secondAttribute="top" id="LRH-S9-3eL"/>
+                                                        <constraint firstItem="jGd-Y3-swl" firstAttribute="leading" secondItem="4Bf-Ku-hOI" secondAttribute="trailing" constant="22" id="Mt2-T2-Nqt"/>
+                                                        <constraint firstAttribute="bottom" secondItem="4Bf-Ku-hOI" secondAttribute="bottom" id="aeb-70-gSX"/>
+                                                        <constraint firstItem="4Bf-Ku-hOI" firstAttribute="centerY" secondItem="jGd-Y3-swl" secondAttribute="centerY" id="tbr-b8-Ntg"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="8yK-vO-aXn" firstAttribute="top" secondItem="zKV-bk-EMn" secondAttribute="topMargin" id="5nw-zF-YoB"/>
-                                                <constraint firstItem="8yK-vO-aXn" firstAttribute="leading" secondItem="zKV-bk-EMn" secondAttribute="leadingMargin" id="Go5-CC-CKd"/>
-                                                <constraint firstItem="8yK-vO-aXn" firstAttribute="trailing" secondItem="zKV-bk-EMn" secondAttribute="trailingMargin" id="b7g-Lv-y89"/>
-                                                <constraint firstItem="8yK-vO-aXn" firstAttribute="centerY" secondItem="zKV-bk-EMn" secondAttribute="centerY" id="dPn-1r-Bbj"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="8yK-vO-aXn" secondAttribute="leading" id="fxC-Vx-djY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8yK-vO-aXn" secondAttribute="trailing" id="jrs-g3-9Wv"/>
+                                                <constraint firstAttribute="topMargin" secondItem="8yK-vO-aXn" secondAttribute="top" id="ucN-bE-uuP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="8yK-vO-aXn" secondAttribute="bottom" constant="1" id="ytN-qk-2ZQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="itemImage_IBO" destination="4Bf-Ku-hOI" id="lqJ-17-84M"/>
+                                            <outlet property="itemLabel_IBO" destination="jGd-Y3-swl" id="Yun-9j-6Ze"/>
                                             <segue destination="xT4-vd-mzv" kind="custom" identifier="iphoneAppsSegue" customClass="CategoriesAppSegue" customModule="rappi" customModuleProvider="target" id="wHg-kq-zwo"/>
                                         </connections>
                                     </tableViewCell>
@@ -129,7 +142,7 @@
                         <constraints>
                             <constraint firstItem="zSr-2d-4gR" firstAttribute="bottom" secondItem="ga5-Ad-9fj" secondAttribute="top" id="HrP-td-3Zp"/>
                             <constraint firstAttribute="trailing" secondItem="zSr-2d-4gR" secondAttribute="trailing" id="Hvk-ri-7Uy"/>
-                            <constraint firstItem="zSr-2d-4gR" firstAttribute="top" secondItem="684-18-yKa" secondAttribute="bottom" constant="-44" id="Kbh-k7-fea"/>
+                            <constraint firstItem="zSr-2d-4gR" firstAttribute="top" secondItem="684-18-yKa" secondAttribute="bottom" constant="37" id="Kbh-k7-fea"/>
                             <constraint firstItem="zSr-2d-4gR" firstAttribute="leading" secondItem="dla-OR-gpC" secondAttribute="leading" id="dHD-aJ-nhu"/>
                         </constraints>
                     </view>
@@ -164,16 +177,30 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="bva-Oh-doD">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="bva-Oh-doD" customClass="iPadMenuCollectionViewCell" customModule="rappi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="108" height="105"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="108" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m7Z-RG-5q1" customClass="RoundImage" customModule="rappi" customModuleProvider="target">
+                                                    <rect key="frame" x="19" y="8" width="70" height="70"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PC1-A6-ee2">
+                                                    <rect key="frame" x="8" y="76" width="92" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.99215686270000003" green="0.49019607840000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
+                                            <outlet property="itemImage_IBO" destination="m7Z-RG-5q1" id="dp1-pM-C2U"/>
+                                            <outlet property="itemLabel_IBO" destination="PC1-A6-ee2" id="5lN-sA-8t1"/>
                                             <segue destination="xT4-vd-mzv" kind="custom" identifier="iphoneAppsSegue" customClass="CategoriesAppSegue" customModule="rappi" customModuleProvider="target" id="3Mg-DJ-szO"/>
                                         </connections>
                                     </collectionViewCell>

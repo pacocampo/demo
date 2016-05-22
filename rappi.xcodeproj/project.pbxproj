@@ -20,6 +20,8 @@
 		551D8D901C7AD1640026D2D1 /* iPadMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D8D8F1C7AD1640026D2D1 /* iPadMenuViewController.swift */; };
 		553CAE2E1C7A374000D0B99D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553CAE2D1C7A374000D0B99D /* DetailViewController.swift */; };
 		556C4CBB1CE8DA09000C3765 /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C4CBA1CE8DA09000C3765 /* CustomSegue.swift */; };
+		55AA77181CEEC0770057CD60 /* iPadMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA77171CEEC0770057CD60 /* iPadMenuCollectionViewCell.swift */; };
+		55B47C661CEEAAB100C55A33 /* iPhoneMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47C651CEEAAB100C55A33 /* iPhoneMenuTableViewCell.swift */; };
 		55F011961C78ED4E00C0F332 /* AppsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F011951C78ED4E00C0F332 /* AppsModel.swift */; };
 		55F011981C7923E700C0F332 /* AppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F011971C7923E700C0F332 /* AppsViewController.swift */; };
 		55F0119A1C7A0C2A00C0F332 /* AppsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F011991C7A0C2A00C0F332 /* AppsCollectionViewCell.swift */; };
@@ -44,6 +46,8 @@
 		551D8D8F1C7AD1640026D2D1 /* iPadMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iPadMenuViewController.swift; sourceTree = "<group>"; };
 		553CAE2D1C7A374000D0B99D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		556C4CBA1CE8DA09000C3765 /* CustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomSegue.swift; path = ../Controllers/Apps/CustomSegue.swift; sourceTree = "<group>"; };
+		55AA77171CEEC0770057CD60 /* iPadMenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iPadMenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		55B47C651CEEAAB100C55A33 /* iPhoneMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iPhoneMenuTableViewCell.swift; sourceTree = "<group>"; };
 		55F011951C78ED4E00C0F332 /* AppsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsModel.swift; sourceTree = "<group>"; };
 		55F011971C7923E700C0F332 /* AppsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsViewController.swift; sourceTree = "<group>"; };
 		55F011991C7A0C2A00C0F332 /* AppsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 			children = (
 				551D8D8F1C7AD1640026D2D1 /* iPadMenuViewController.swift */,
 				551D8D8D1C7AD14F0026D2D1 /* iPhoneMenuViewController.swift */,
+				55B47C651CEEAAB100C55A33 /* iPhoneMenuTableViewCell.swift */,
+				55AA77171CEEC0770057CD60 /* iPadMenuCollectionViewCell.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 				551B64381C74A4D400891C48 /* ViewController.swift in Sources */,
 				551B64501C74BDEE00891C48 /* ApiBridge.swift in Sources */,
 				551B643E1C74A4D400891C48 /* rappi.xcdatamodeld in Sources */,
+				55B47C661CEEAAB100C55A33 /* iPhoneMenuTableViewCell.swift in Sources */,
 				551B64361C74A4D400891C48 /* AppDelegate.swift in Sources */,
 				55F011961C78ED4E00C0F332 /* AppsModel.swift in Sources */,
 				551D8D8E1C7AD14F0026D2D1 /* iPhoneMenuViewController.swift in Sources */,
@@ -323,6 +330,7 @@
 				551B64521C74C33D00891C48 /* EndPointCatalogue.swift in Sources */,
 				55F0119A1C7A0C2A00C0F332 /* AppsCollectionViewCell.swift in Sources */,
 				556C4CBB1CE8DA09000C3765 /* CustomSegue.swift in Sources */,
+				55AA77181CEEC0770057CD60 /* iPadMenuCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
