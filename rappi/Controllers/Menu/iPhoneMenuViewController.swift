@@ -8,31 +8,37 @@
 
 import UIKit
 
-class iPhoneMenuViewController: UIViewController {
+class iPhoneMenuViewController: UIViewController, TopBarDelegate {
+  
+  //Attributes
+  let topbarView : TopBar = TopBar()
+  let categories = Menu.categorias
+  
   //Outlets
+  //  @IBOutlet weak var topbarView:TopBar!;
   @IBOutlet weak var tableview: UITableView!
   
   //Action
   @IBAction func returnFromSegueActions(sender: UIStoryboardSegue){
-    
   }
-
-  //Attributes
-  let categories = Menu.categorias
-
+  
+  //===================================================================//
+  
   //Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    let bar = TopBar()
-    bar.hiddenMenu = false
-    bar.title = "Categorias"
-    self.view.addSubview(bar)
+    topbarView.hiddenMenu  = true
+    topbarView.hiddenBack  = true
+    topbarView.title       = "Categorias"
+    topbarView.delegate    = self
+    self.view.addSubview(topbarView)
   }
-  
+  //===================================================================//
 }
 
+//MARK : Table View Delegate & DataSource
 extension iPhoneMenuViewController : UITableViewDelegate, UITableViewDataSource {
-
+  
   //MARK: Table stuff
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return categories.count
@@ -48,19 +54,20 @@ extension iPhoneMenuViewController : UITableViewDelegate, UITableViewDataSource 
     
     return cell
   }
+  //===================================================================//
   
-  
-//  //MARK: Navigation
+  //  //MARK: Navigation
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//    let cell    = tableview.indexPathForSelectedRow!
-//    let vc      = segue.destinationViewController as! AppsViewController
-//    vc.category = categories[cell.row]
+    let cell    = tableview.indexPathForSelectedRow!
+    let item    = categories[cell.row]
+    let vc      = segue.destinationViewController as! AppsViewController
+    vc.category = item!["title"] as! String
   }
   
   override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue? {
     if let id = identifier {
       if id == "returnMenuSegue" {
-        let undwindSegue = ReturnMenueSegue(identifier: id, source: fromViewController, destination: toViewController, performHandler: { 
+        let undwindSegue = ReturnMenueSegue(identifier: id, source: fromViewController, destination: toViewController, performHandler: {
           () -> Void in
         })
         return undwindSegue

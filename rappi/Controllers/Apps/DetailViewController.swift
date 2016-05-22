@@ -9,10 +9,13 @@
 import UIKit
 import RealmSwift
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, TopBarDelegate {
   
+  //MARK: Attributes
+  let topbar = TopBar()
   var apps : String?
   let realm = try! Realm()
+  var itunesId = ""
   var scrollHeight : CGFloat = 0
   var scrollWidth :CGFloat = 0
   
@@ -23,10 +26,27 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var appPrice: UILabel!
   @IBOutlet weak var appDescription: UITextView!
   @IBOutlet weak var appRecommendedView: UIScrollView!
-
+  
+  //MARK: Actions
+  @IBAction func itunesAction(sender: AnyObject) {
+    UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/bars/id\(itunesId)")!)
+  }
+  
+  func topbar(topbar: TopBar, clicked: String) {
+    self.backToCategories()
+  }
+  
+  //MARK: Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     getApp()
+    
+    //topbar
+    topbar.title      = appName.text!
+    topbar.hiddenMenu = true
+    topbar.hiddenBack = false
+    topbar.delegate   = self
+    self.view.addSubview(topbar)
     
     //Add gesture
     let gestureToBack = UISwipeGestureRecognizer(target: self, action: #selector(DetailViewController.backToCategories))
@@ -40,6 +60,7 @@ class DetailViewController: UIViewController {
     
   }
   
+  //MARK : Get Detail Application
   private func getApp() {
     var xView : CGFloat = 5.0
     if let app = apps {
@@ -50,6 +71,9 @@ class DetailViewController: UIViewController {
       appCategory.text    = application!.category
       appPrice.text       = String(application!.price)
       appDescription.text = application!.sumary
+      itunesId            = application!.itunes
+      
+      print(itunesId)
       
       //Built recommended section
       let recommended     = realm.objects(Application).filter("category = '\(application!.category)'")
@@ -68,5 +92,5 @@ class DetailViewController: UIViewController {
   func backToCategories() {
     self.performSegueWithIdentifier("returnCategoriesSegue", sender: self)
   }
-
+  
 }

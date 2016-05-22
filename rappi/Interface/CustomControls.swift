@@ -41,13 +41,34 @@ class RoundImage : UIImageView {
   }
 }
 
+class rappiAppSelectedButton : UIButton {
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    backgroundColor = UIColor.whiteColor()
+    tintColor = UIColor(red: 253/255, green: 125/255, blue: 91/255, alpha: 1.0)
+    setTitle("Ver en iTunes", forState: .Normal)
+    layer.borderColor = UIColor(red: 253/255, green: 125/255, blue: 91/255, alpha: 1.0).CGColor
+    layer.borderWidth = 1
+    layer.cornerRadius = 2
+    layer.shadowColor = UIColor.grayColor().CGColor
+    layer.shadowOffset = CGSize(width: 3, height: 3)
+    layer.shadowOpacity = 2
+  }
+}
+
 
 // TopBar
+@objc protocol TopBarDelegate {
+  optional func topbar(topbar:TopBar, clicked:String)
+}
+
 class TopBar : UIView {
   let thisFrame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height * 0.10)
   
-  var titleLabel : UILabel!
-  var menuButton : UIButton!
+  var titleLabel  : UILabel!
+  var menuButton  : UIButton!
+  var backButton  : UIButton!
+  var delegate    : TopBarDelegate!
   
   var title : String {
     set { titleLabel.text = newValue }
@@ -57,6 +78,11 @@ class TopBar : UIView {
   var hiddenMenu : Bool {
     set { menuButton.hidden = newValue }
     get { return !menuButton.hidden }
+  }
+  
+  var hiddenBack : Bool {
+    set { backButton.hidden = newValue }
+    get { return !backButton.hidden }
   }
   
   init() {
@@ -74,14 +100,27 @@ class TopBar : UIView {
     // Button
     menuButton = UIButton(frame: CGRectMake(5, 5, 30, 30))
     menuButton.setImage(UIImage(named:"menuIcon"), forState: .Normal)
+    menuButton.addTarget(self, action: #selector(TopBar.clickBack(_:)), forControlEvents: .TouchUpInside)
+    
+    // BackButton
+    backButton = UIButton(frame: CGRectMake(5, 5, 50, 30))
+    backButton.setTitle("back", forState: .Normal)
+    backButton.addTarget(self, action: #selector(TopBar.clickBack(_:)), forControlEvents: .TouchUpInside)
     
     self.addSubview(titleLabel)
+    self.addSubview(backButton)
     self.addSubview(menuButton)
     
   }
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
+  }
+  
+  func clickBack(sender:AnyObject) {
+    if(delegate != nil) {
+      delegate.topbar!(self, clicked: "menu");
+    }
   }
   
 }

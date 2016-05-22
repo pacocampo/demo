@@ -28,7 +28,7 @@ class ApplicationJson {
     let url       = data["im:image"][0]["label"].string!
     self.image    = NSData(contentsOfURL: NSURL(string: url)!)!
     self.price    = Double(data["im:price"]["attributes"]["amount"].string!)!
-    self.itunes   = data["link"]["attributes"]["href"].string!
+    self.itunes   = data["id"]["attributes"]["im:id"].string!
   }
   
 }
