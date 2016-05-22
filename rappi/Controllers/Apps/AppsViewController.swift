@@ -10,7 +10,7 @@ import UIKit
 import Realm
 import RealmSwift
 
-class AppsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class AppsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, TopBarDelegate {
   //MARK: Outlets
   @IBOutlet weak var collectionView: UICollectionView!
   
@@ -18,6 +18,13 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
   @IBAction func returnFromDetailSegueActions(sender: UIStoryboardSegue){
     
+  }
+  
+  //TopBar delegate Func
+  func topbar(topbar: TopBar, clicked: String) {
+    if (clicked == "menu") {
+      self.backToMenu()
+    }
   }
 
   
@@ -32,12 +39,20 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     super.viewDidLoad()
     buildAppsViews()
     
+    //TopBar
+    let topBar = TopBar()
+    topBar.hiddenMenu = false
+    topBar.title      = category
+    topBar.delegate    = self
+    self.view.addSubview(topBar)
+    
     //Add gesture for back navigation
     let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.backToMenu))
     swipeGesture.direction = .Right
     self.view.addGestureRecognizer(swipeGesture)
   }
   
+  // MARK: Get apps collection
   private func buildAppsViews() {
     let userPredicate   = NSPredicate(format: "category = %@", category)
     let apps = realm.objects(Application).filter(userPredicate)
@@ -70,7 +85,7 @@ class AppsViewController: UIViewController, UICollectionViewDelegate, UICollecti
     return cell
   }
   
-  //MARK: Navitation
+  //MARK: Navigation
   
   func backToMenu () {
     self.performSegueWithIdentifier("returnMenuSegue", sender: self)

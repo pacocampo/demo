@@ -94,21 +94,21 @@ class TopBar : UIView {
     // Button
     menuButton = UIButton(frame: CGRectMake(5, 5, 30, 30))
     menuButton.setImage(UIImage(named:"menuIcon"), forState: .Normal)
+    menuButton.addTarget(self, action: #selector(TopBar.clickBack(_:)), forControlEvents: .TouchUpInside)
     
     self.addSubview(titleLabel)
     self.addSubview(menuButton)
-    
-    func clickBack(sender:AnyObject) {
-      if(delegate != nil) {
-        delegate.topbar!(self, clicked: "menu");
-      }
-    }
-
     
   }
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
+  }
+  
+  func clickBack(sender:AnyObject) {
+    if(delegate != nil) {
+      delegate.topbar!(self, clicked: "menu");
+    }
   }
   
 }
