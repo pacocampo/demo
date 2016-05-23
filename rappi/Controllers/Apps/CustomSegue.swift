@@ -42,7 +42,7 @@ class ReturnMenueSegue : UIStoryboardSegue {
     let window = UIApplication.sharedApplication().keyWindow
     window?.insertSubview(secondVc, aboveSubview: secondVc)
     
-    UIView.animateWithDuration(1, animations: { () -> Void in
+    UIView.animateWithDuration(0.5, animations: { () -> Void in
       firstVc.frame = CGRectOffset(firstVc.frame, 0.0, height)
       secondVc.frame = CGRectOffset(secondVc.frame, 0.0, -height)
       
