@@ -87,7 +87,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zSr-2d-4gR">
-                                <rect key="frame" x="0.0" y="57" width="600" height="543"/>
+                                <rect key="frame" x="0.0" y="63" width="600" height="537"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="90" id="Cqb-kq-MZx" customClass="iPhoneMenuTableViewCell" customModule="rappi" customModuleProvider="target">
@@ -107,8 +107,11 @@
                                                                 <constraint firstAttribute="width" constant="73" id="C3O-xm-RZ4"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGd-Y3-swl">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGd-Y3-swl">
                                                             <rect key="frame" x="103" y="26" width="473" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="473" id="viS-iH-JJY"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -148,7 +151,7 @@
                         <constraints>
                             <constraint firstItem="zSr-2d-4gR" firstAttribute="bottom" secondItem="ga5-Ad-9fj" secondAttribute="top" id="HrP-td-3Zp"/>
                             <constraint firstAttribute="trailing" secondItem="zSr-2d-4gR" secondAttribute="trailing" id="Hvk-ri-7Uy"/>
-                            <constraint firstItem="zSr-2d-4gR" firstAttribute="top" secondItem="684-18-yKa" secondAttribute="bottom" constant="37" id="Kbh-k7-fea"/>
+                            <constraint firstItem="zSr-2d-4gR" firstAttribute="top" secondItem="684-18-yKa" secondAttribute="bottom" constant="43" id="Kbh-k7-fea"/>
                             <constraint firstItem="zSr-2d-4gR" firstAttribute="leading" secondItem="dla-OR-gpC" secondAttribute="leading" id="dHD-aJ-nhu"/>
                         </constraints>
                     </view>
@@ -174,7 +177,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DiU-FK-33H">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="63" width="600" height="537"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="n1D-RZ-gd5">
                                     <size key="itemSize" width="108" height="105"/>
@@ -219,7 +222,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DiU-FK-33H" firstAttribute="top" secondItem="Rlh-2W-nUf" secondAttribute="top" id="Per-2T-M81"/>
+                            <constraint firstItem="DiU-FK-33H" firstAttribute="top" secondItem="Rlh-2W-nUf" secondAttribute="top" constant="63" id="Per-2T-M81"/>
                             <constraint firstAttribute="trailing" secondItem="DiU-FK-33H" secondAttribute="trailing" id="YEO-2L-2K3"/>
                             <constraint firstItem="DiU-FK-33H" firstAttribute="leading" secondItem="Rlh-2W-nUf" secondAttribute="leading" id="Zye-ez-ILT"/>
                             <constraint firstItem="DiU-FK-33H" firstAttribute="bottom" secondItem="gsg-3W-Ax1" secondAttribute="top" id="a3P-Tt-gOu"/>
@@ -330,13 +333,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W66-Oe-4xt">
-                                <rect key="frame" x="20" y="34" width="560" height="128"/>
+                                <rect key="frame" x="20" y="46" width="560" height="116"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="33Z-a9-c1y">
-                                        <rect key="frame" x="274" y="0.0" width="286" height="128"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="33Z-a9-c1y">
+                                        <rect key="frame" x="274" y="0.0" width="286" height="116"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="286" id="b6I-ll-y40"/>
+                                            <constraint firstAttribute="height" constant="116" id="sFw-ay-3ZE"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="33Z-a9-c1y" firstAttribute="top" secondItem="W66-Oe-4xt" secondAttribute="top" id="LeI-KF-glE"/>
+                                    <constraint firstAttribute="trailing" secondItem="33Z-a9-c1y" secondAttribute="trailing" id="bZ9-f9-hjh"/>
+                                </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hzX-Gp-OMf" customClass="CustomImage" customModule="rappi" customModuleProvider="target">
                                 <rect key="frame" x="20" y="72" width="90" height="90"/>
@@ -408,7 +419,7 @@
                             <constraint firstItem="W66-Oe-4xt" firstAttribute="trailing" secondItem="xDS-LG-nu0" secondAttribute="trailing" id="Wyr-8m-rHM"/>
                             <constraint firstItem="izX-sl-qZu" firstAttribute="top" secondItem="xDS-LG-nu0" secondAttribute="bottom" constant="44.5" id="apg-5m-Nto"/>
                             <constraint firstItem="QLX-cM-QTl" firstAttribute="top" secondItem="THn-v2-dhj" secondAttribute="bottom" constant="8" id="arr-sa-EWl"/>
-                            <constraint firstItem="W66-Oe-4xt" firstAttribute="top" secondItem="kbS-sk-eBI" secondAttribute="bottom" constant="14" id="byI-0B-I2r"/>
+                            <constraint firstItem="W66-Oe-4xt" firstAttribute="top" secondItem="kbS-sk-eBI" secondAttribute="bottom" constant="26" id="byI-0B-I2r"/>
                             <constraint firstItem="Syj-Rz-QQk" firstAttribute="top" secondItem="RvS-MF-Byx" secondAttribute="bottom" constant="2.5" id="cEq-aQ-CyR"/>
                             <constraint firstItem="izX-sl-qZu" firstAttribute="centerY" secondItem="wgZ-wt-wyD" secondAttribute="centerY" constant="5.5" id="dTQ-Jh-lBe"/>
                             <constraint firstItem="QLX-cM-QTl" firstAttribute="trailing" secondItem="THn-v2-dhj" secondAttribute="trailing" id="eoC-sn-0Fh"/>

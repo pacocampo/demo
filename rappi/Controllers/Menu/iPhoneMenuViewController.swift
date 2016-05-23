@@ -15,7 +15,6 @@ class iPhoneMenuViewController: UIViewController, TopBarDelegate {
   let categories = Menu.categorias
   
   //Outlets
-  //  @IBOutlet weak var topbarView:TopBar!;
   @IBOutlet weak var tableview: UITableView!
   
   //Action

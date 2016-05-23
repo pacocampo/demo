@@ -8,7 +8,11 @@
 
 import UIKit
 
-class iPadMenuViewController: UIViewController {
+class iPadMenuViewController: UIViewController, TopBarDelegate {
+  
+  //Attributes
+  let topbarView : TopBar = TopBar()
+  
   @IBOutlet weak var collectionView: UICollectionView!
     let categories = Menu.categorias
 
@@ -20,6 +24,11 @@ class iPadMenuViewController: UIViewController {
   //Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    topbarView.hiddenMenu  = true
+    topbarView.hiddenBack  = true
+    topbarView.title       = "Categorias"
+    topbarView.delegate    = self
+    self.view.addSubview(topbarView)
   }
   
 }
@@ -46,9 +55,10 @@ extension iPadMenuViewController :  UICollectionViewDataSource, UICollectionView
 
   // MARK: - Navigation
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//    let cell    = collectionView.indexPathForCell(sender as! UICollectionViewCell)
-//    let vc      = segue.destinationViewController as! AppsViewController
-//    vc.category = categories[(cell?.row)!]
+    let cell    = collectionView.indexPathForCell(sender as! UICollectionViewCell)
+    let item    = categories[cell!.row]
+    let vc      = segue.destinationViewController as! AppsViewController
+    vc.category = item!["title"] as! String
   }
   
   override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue? {

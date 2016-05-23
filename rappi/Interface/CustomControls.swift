@@ -63,7 +63,7 @@ class rappiAppSelectedButton : UIButton {
 }
 
 class TopBar : UIView {
-  let thisFrame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height * 0.10)
+  let thisFrame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 50)
   
   var titleLabel  : UILabel!
   var menuButton  : UIButton!
@@ -98,12 +98,12 @@ class TopBar : UIView {
     titleLabel.textColor = UIColor.whiteColor()
     
     // Button
-    menuButton = UIButton(frame: CGRectMake(5, 5, 30, 30))
+    menuButton = UIButton(frame: CGRectMake(5, 10, 30, 30))
     menuButton.setImage(UIImage(named:"menuIcon"), forState: .Normal)
     menuButton.addTarget(self, action: #selector(TopBar.clickBack(_:)), forControlEvents: .TouchUpInside)
     
     // BackButton
-    backButton = UIButton(frame: CGRectMake(5, 5, 50, 30))
+    backButton = UIButton(frame: CGRectMake(5, 10, 50, 30))
     backButton.setTitle("back", forState: .Normal)
     backButton.addTarget(self, action: #selector(TopBar.clickBack(_:)), forControlEvents: .TouchUpInside)
     
