@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		551B64361C74A4D400891C48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B64351C74A4D400891C48 /* AppDelegate.swift */; };
+		551B64381C74A4D400891C48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B64371C74A4D400891C48 /* ViewController.swift */; };
+		551B643B1C74A4D400891C48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 551B64391C74A4D400891C48 /* Main.storyboard */; };
+		551B643E1C74A4D400891C48 /* rappi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 551B643C1C74A4D400891C48 /* rappi.xcdatamodeld */; };
+		551B64401C74A4D400891C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 551B643F1C74A4D400891C48 /* Assets.xcassets */; };
+		551B64431C74A4D400891C48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 551B64411C74A4D400891C48 /* LaunchScreen.storyboard */; };
+		551B64501C74BDEE00891C48 /* ApiBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B644F1C74BDEE00891C48 /* ApiBridge.swift */; };
+		551B64521C74C33D00891C48 /* EndPointCatalogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B64511C74C33D00891C48 /* EndPointCatalogue.swift */; };
+		551B64551C74C60C00891C48 /* CustomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B64541C74C60C00891C48 /* CustomControls.swift */; };
+		551D8D8E1C7AD14F0026D2D1 /* iPhoneMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D8D8D1C7AD14F0026D2D1 /* iPhoneMenuViewController.swift */; };
+		551D8D901C7AD1640026D2D1 /* iPadMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D8D8F1C7AD1640026D2D1 /* iPadMenuViewController.swift */; };
+		553CAE2E1C7A374000D0B99D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553CAE2D1C7A374000D0B99D /* DetailViewController.swift */; };
+		556C4CBB1CE8DA09000C3765 /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556C4CBA1CE8DA09000C3765 /* CustomSegue.swift */; };
+		55AA77181CEEC0770057CD60 /* iPadMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA77171CEEC0770057CD60 /* iPadMenuCollectionViewCell.swift */; };
+		55B47C661CEEAAB100C55A33 /* iPhoneMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47C651CEEAAB100C55A33 /* iPhoneMenuTableViewCell.swift */; };
+		55F011961C78ED4E00C0F332 /* AppsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F011951C78ED4E00C0F332 /* AppsModel.swift */; };
+		55F011981C7923E700C0F332 /* AppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F011971C7923E700C0F332 /* AppsViewController.swift */; };
+		55F0119A1C7A0C2A00C0F332 /* AppsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F011991C7A0C2A00C0F332 /* AppsCollectionViewCell.swift */; };
+		B3C7D7C05190B5D7BFD5E45E /* Pods_rappi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC2C01348D50C9B135D2D21 /* Pods_rappi.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0AC2C01348D50C9B135D2D21 /* Pods_rappi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rappi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5160B749E01CF16095785BC8 /* Pods-rappi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rappi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rappi/Pods-rappi.debug.xcconfig"; sourceTree = "<group>"; };
+		551B64321C74A4D400891C48 /* rappi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rappi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		551B64351C74A4D400891C48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		551B64371C74A4D400891C48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		551B643A1C74A4D400891C48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		551B643D1C74A4D400891C48 /* rappi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = rappi.xcdatamodel; sourceTree = "<group>"; };
+		551B643F1C74A4D400891C48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		551B64421C74A4D400891C48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		551B64441C74A4D400891C48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		551B644F1C74BDEE00891C48 /* ApiBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiBridge.swift; sourceTree = "<group>"; };
+		551B64511C74C33D00891C48 /* EndPointCatalogue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointCatalogue.swift; sourceTree = "<group>"; };
+		551B64541C74C60C00891C48 /* CustomControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomControls.swift; sourceTree = "<group>"; };
+		551D8D8D1C7AD14F0026D2D1 /* iPhoneMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iPhoneMenuViewController.swift; sourceTree = "<group>"; };
+		551D8D8F1C7AD1640026D2D1 /* iPadMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iPadMenuViewController.swift; sourceTree = "<group>"; };
+		553CAE2D1C7A374000D0B99D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		556C4CBA1CE8DA09000C3765 /* CustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomSegue.swift; path = ../Controllers/Apps/CustomSegue.swift; sourceTree = "<group>"; };
+		55AA77171CEEC0770057CD60 /* iPadMenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iPadMenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		55B47C651CEEAAB100C55A33 /* iPhoneMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iPhoneMenuTableViewCell.swift; sourceTree = "<group>"; };
+		55F011951C78ED4E00C0F332 /* AppsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsModel.swift; sourceTree = "<group>"; };
+		55F011971C7923E700C0F332 /* AppsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsViewController.swift; sourceTree = "<group>"; };
+		55F011991C7A0C2A00C0F332 /* AppsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA050A1CC1AC909EDD38257C /* Pods-rappi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rappi.release.xcconfig"; path = "Pods/Target Support Files/Pods-rappi/Pods-rappi.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		551B642F1C74A4D400891C48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3C7D7C05190B5D7BFD5E45E /* Pods_rappi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		551B64291C74A4D400891C48 = {
+			isa = PBXGroup;
+			children = (
+				B02F1EE2E5667F3E204291D4 /* Frameworks */,
+				81E3575E9E67CC3980A0853A /* Pods */,
+				551B64331C74A4D400891C48 /* Products */,
+				551B64341C74A4D400891C48 /* rappi */,
+			);
+			sourceTree = "<group>";
+		};
+		551B64331C74A4D400891C48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				551B64321C74A4D400891C48 /* rappi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		551B64341C74A4D400891C48 /* rappi */ = {
+			isa = PBXGroup;
+			children = (
+				551B644C1C74BB2800891C48 /* Controllers */,
+				551B644D1C74BB3400891C48 /* Models */,
+				551B644E1C74BB4D00891C48 /* Settings */,
+				551B644A1C74BB0300891C48 /* Data */,
+				551B644B1C74BB1100891C48 /* View */,
+				551B643F1C74A4D400891C48 /* Assets.xcassets */,
+			);
+			path = rappi;
+			sourceTree = "<group>";
+		};
+		551B644A1C74BB0300891C48 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				551B644F1C74BDEE00891C48 /* ApiBridge.swift */,
+				551B64511C74C33D00891C48 /* EndPointCatalogue.swift */,
+			);
+			name = Data;
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		551B644B1C74BB1100891C48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				551B64531C74C5F500891C48 /* Interface */,
+				551B64411C74A4D400891C48 /* LaunchScreen.storyboard */,
+				551B64391C74A4D400891C48 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		551B644C1C74BB2800891C48 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				551D8D921C7AEC0B0026D2D1 /* Apps */,
+				551D8D911C7AEBF90026D2D1 /* Menu */,
+				551B64371C74A4D400891C48 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		551B644D1C74BB3400891C48 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55F011951C78ED4E00C0F332 /* AppsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		551B644E1C74BB4D00891C48 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				551B64351C74A4D400891C48 /* AppDelegate.swift */,
+				551B64441C74A4D400891C48 /* Info.plist */,
+				551B643C1C74A4D400891C48 /* rappi.xcdatamodeld */,
+			);
+			name = Settings;
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		551B64531C74C5F500891C48 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				556C4CBA1CE8DA09000C3765 /* CustomSegue.swift */,
+				551B64541C74C60C00891C48 /* CustomControls.swift */,
+			);
+			name = Interface;
+			path = ../Interface;
+			sourceTree = "<group>";
+		};
+		551D8D911C7AEBF90026D2D1 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				551D8D8F1C7AD1640026D2D1 /* iPadMenuViewController.swift */,
+				551D8D8D1C7AD14F0026D2D1 /* iPhoneMenuViewController.swift */,
+				55B47C651CEEAAB100C55A33 /* iPhoneMenuTableViewCell.swift */,
+				55AA77171CEEC0770057CD60 /* iPadMenuCollectionViewCell.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		551D8D921C7AEC0B0026D2D1 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				55F011991C7A0C2A00C0F332 /* AppsCollectionViewCell.swift */,
+				55F011971C7923E700C0F332 /* AppsViewController.swift */,
+				553CAE2D1C7A374000D0B99D /* DetailViewController.swift */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		81E3575E9E67CC3980A0853A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5160B749E01CF16095785BC8 /* Pods-rappi.debug.xcconfig */,
+				FA050A1CC1AC909EDD38257C /* Pods-rappi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B02F1EE2E5667F3E204291D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0AC2C01348D50C9B135D2D21 /* Pods_rappi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		551B64311C74A4D400891C48 /* rappi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 551B64471C74A4D400891C48 /* Build configuration list for PBXNativeTarget "rappi" */;
+			buildPhases = (
+				D3106611EB0FBE1738BD18F2 /* Check Pods Manifest.lock */,
+				551B642E1C74A4D400891C48 /* Sources */,
+				551B642F1C74A4D400891C48 /* Frameworks */,
+				551B64301C74A4D400891C48 /* Resources */,
+				AC0DE52224EE49602FD356C0 /* Embed Pods Frameworks */,
+				1768A4E52527698F204C68CD /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = rappi;
+			productName = rappi;
+			productReference = 551B64321C74A4D400891C48 /* rappi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		551B642A1C74A4D400891C48 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = coldhandslabs;
+				TargetAttributes = {
+					551B64311C74A4D400891C48 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 551B642D1C74A4D400891C48 /* Build configuration list for PBXProject "rappi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 551B64291C74A4D400891C48;
+			productRefGroup = 551B64331C74A4D400891C48 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				551B64311C74A4D400891C48 /* rappi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		551B64301C74A4D400891C48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				551B64431C74A4D400891C48 /* LaunchScreen.storyboard in Resources */,
+				551B64401C74A4D400891C48 /* Assets.xcassets in Resources */,
+				551B643B1C74A4D400891C48 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1768A4E52527698F204C68CD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rappi/Pods-rappi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC0DE52224EE49602FD356C0 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rappi/Pods-rappi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3106611EB0FBE1738BD18F2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		551B642E1C74A4D400891C48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				551B64381C74A4D400891C48 /* ViewController.swift in Sources */,
+				551B64501C74BDEE00891C48 /* ApiBridge.swift in Sources */,
+				551B643E1C74A4D400891C48 /* rappi.xcdatamodeld in Sources */,
+				55B47C661CEEAAB100C55A33 /* iPhoneMenuTableViewCell.swift in Sources */,
+				551B64361C74A4D400891C48 /* AppDelegate.swift in Sources */,
+				55F011961C78ED4E00C0F332 /* AppsModel.swift in Sources */,
+				551D8D8E1C7AD14F0026D2D1 /* iPhoneMenuViewController.swift in Sources */,
+				551B64551C74C60C00891C48 /* CustomControls.swift in Sources */,
+				55F011981C7923E700C0F332 /* AppsViewController.swift in Sources */,
+				553CAE2E1C7A374000D0B99D /* DetailViewController.swift in Sources */,
+				551D8D901C7AD1640026D2D1 /* iPadMenuViewController.swift in Sources */,
+				551B64521C74C33D00891C48 /* EndPointCatalogue.swift in Sources */,
+				55F0119A1C7A0C2A00C0F332 /* AppsCollectionViewCell.swift in Sources */,
+				556C4CBB1CE8DA09000C3765 /* CustomSegue.swift in Sources */,
+				55AA77181CEEC0770057CD60 /* iPadMenuCollectionViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		551B64391C74A4D400891C48 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				551B643A1C74A4D400891C48 /* Base */,
+			);
+			name = Main.storyboard;
+			path = .;
+			sourceTree = "<group>";
+		};
+		551B64411C74A4D400891C48 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				551B64421C74A4D400891C48 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = .;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		551B64451C74A4D400891C48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		551B64461C74A4D400891C48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		551B64481C74A4D400891C48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5160B749E01CF16095785BC8 /* Pods-rappi.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = rappi/Swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coldhandslabs.rappi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		551B64491C74A4D400891C48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA050A1CC1AC909EDD38257C /* Pods-rappi.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = rappi/Swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coldhandslabs.rappi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		551B642D1C74A4D400891C48 /* Build configuration list for PBXProject "rappi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				551B64451C74A4D400891C48 /* Debug */,
+				551B64461C74A4D400891C48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		551B64471C74A4D400891C48 /* Build configuration list for PBXNativeTarget "rappi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				551B64481C74A4D400891C48 /* Debug */,
+				551B64491C74A4D400891C48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		551B643C1C74A4D400891C48 /* rappi.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				551B643D1C74A4D400891C48 /* rappi.xcdatamodel */,
+			);
+			currentVersion = 551B643D1C74A4D400891C48 /* rappi.xcdatamodel */;
+			path = rappi.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 551B642A1C74A4D400891C48 /* Project object */;
+}
