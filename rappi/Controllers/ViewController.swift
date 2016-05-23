@@ -50,6 +50,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     //Activity
     activity.hidesWhenStopped = true
+    self.actionButton_IBO.setTitle("Espera por favor...", forState: .Normal)
     activity.startAnimating()
     loadData()
     rappiImage_IBO.center = CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2)
@@ -65,10 +66,11 @@ class ViewController: UIViewController {
         UIAlertView(title: "Sin conexión", message: "Uups, no tienes conexión y es necesario para la primera carga, vuelve a internarlo en cuanto tengas conexión", delegate: nil, cancelButtonTitle: "Ok").show()
 
       } else {
-        api.getData(Api.endPoint, activity: activity)
+        api.getData(Api.endPoint, activity: self)
       }
     } else {
       activity.stopAnimating()
+      actionButton_IBO.setTitle("¡Para ingresar arrastra el logo aquí!", forState: .Normal)
     }
   }
   

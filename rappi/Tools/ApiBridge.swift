@@ -13,7 +13,7 @@ import SystemConfiguration
 
 class ApiBridge {
   
-  func getData(url: Api, activity : UIActivityIndicatorView) {
+  func getData(url: Api, activity : ViewController) {
       Alamofire.request(.GET, url.rawValue)
         .responseJSON { response in
           guard response.result.error == nil else {
@@ -23,7 +23,8 @@ class ApiBridge {
           if let value: AnyObject = response.result.value {
               let data = JSON(value)
               self.saveDataOnLocal(data)
-              activity.stopAnimating()
+              activity.activity.stopAnimating()
+              activity.actionButton_IBO.setTitle("¡Para ingresar arrastra el logo aquí!", forState: .Normal)
           }
       }
   }
